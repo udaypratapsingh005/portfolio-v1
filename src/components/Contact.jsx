@@ -83,20 +83,6 @@ function Contact() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="user_phone">Contact Number</label>
-
-                <input
-                  id="user_phone"
-                  type="tel"
-                  name="user_phone"
-                  placeholder="+91 XXXXX XXXXX"
-                  autoComplete="tel"
-                  inputMode="tel"
-                  required
-                />
-              </div>
-
-              <div className="form-group">
                 <label htmlFor="message">Message</label>
 
                 <textarea

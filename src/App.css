@@ -952,33 +952,41 @@
   }
 }
 
-/* ================================
-   SKILLS
-================================ */
+/* =========================================
+   SKILLS / TECH STACK
+========================================= */
 
 .skills {
   position: relative;
-
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
 }
 
-.skills::after {
+.skills::before {
   content: "";
-
   position: absolute;
-  right: -250px;
-  bottom: 5%;
-
-  width: 500px;
-  height: 500px;
-
-  border-radius: 50%;
-
-  background: rgba(59, 130, 246, 0.04);
-
-  filter: blur(100px);
-
+  inset: 0;
   pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
 }
 
 .skills .container {
@@ -986,162 +994,316 @@
   z-index: 1;
 }
 
-.skills-grid {
+.skills .section-heading {
+  margin-bottom: 60px;
+}
+
+/* Main grid */
+
+.skills-tech-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  border-top: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
 }
 
-.skill-category {
-  min-height: 390px;
+/* Group */
 
-  padding: 30px;
-
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-
-  background: var(--bg-card);
-
+.tech-group {
+  min-height: 400px;
+  padding: 34px;
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(10, 10, 10, 0.45);
   transition:
-    border-color 0.3s ease,
-    transform 0.3s ease,
-    background 0.3s ease;
+    background 0.35s ease,
+    border-color 0.35s ease;
 }
 
-.skill-category:hover {
+.tech-group:hover {
+  background: rgba(20, 20, 20, 0.75);
   border-color: rgba(59, 130, 246, 0.35);
-
-  background: #171717;
-
-  transform: translateY(-5px);
 }
 
-.skill-category-header {
+/* Header */
+
+.tech-group-header {
   display: flex;
-  align-items: center;
-  gap: 16px;
-
-  padding-bottom: 22px;
-
+  align-items: flex-start;
+  gap: 14px;
+  padding-bottom: 26px;
+  margin-bottom: 24px;
   border-bottom: 1px solid var(--border-color);
 }
 
-.skill-category-number {
+.tech-group-number {
   color: var(--accent);
-
-  font-family: "Space Grotesk", sans-serif;
-
-  font-size: 0.8rem;
+  font-size: 12px;
   font-weight: 600;
+  letter-spacing: 0.05em;
+  padding-top: 4px;
 }
 
-.skill-category-header h3 {
-  font-family: "Space Grotesk", sans-serif;
+.tech-group-header h3 {
+  margin-bottom: 8px;
 
-  font-size: 1.25rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 20px;
   font-weight: 600;
+  color: var(--text-primary);
 }
 
-.skill-category-description {
-  min-height: 75px;
-
-  margin-top: 22px;
+.tech-group-header p {
+  max-width: 300px;
 
   color: var(--text-muted);
-
-  font-size: 0.88rem;
+  font-size: 13px;
   line-height: 1.7;
 }
 
-.skill-list {
+/* Technology items */
+
+.tech-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.tech-item {
+  position: relative;
+
+  min-height: 125px;
+  padding: 22px 16px;
+
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 
-  margin-top: 15px;
-}
-
-.skill-item {
-  min-height: 50px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 15px;
-
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  overflow: hidden;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
-.skill-item:last-child {
+.tech-item:nth-child(even) {
+  border-right: none;
+}
+
+.tech-item:nth-last-child(-n + 2) {
   border-bottom: none;
 }
 
-.skill-name {
+/* Icon */
+
+.tech-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 12px;
+
+  color: var(--text-primary);
+  font-size: 32px;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    filter 0.3s ease;
+}
+
+.tech-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Name */
+
+.tech-info h4 {
+  margin-bottom: 4px;
+
   color: var(--text-primary);
 
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.skill-level {
-  padding: 5px 9px;
-
-  border-radius: 5px;
-
-  font-size: 0.65rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
 }
 
-.skill-level-core {
-  background: rgba(59, 130, 246, 0.1);
-  color: #60a5fa;
-}
-
-.skill-level-learning {
-  background: rgba(255, 255, 255, 0.06);
+.tech-info span {
   color: var(--text-muted);
+
+  font-size: 10px;
+  line-height: 1.4;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.skill-level-working {
-  background: rgba(34, 197, 94, 0.08);
-  color: #86efac;
+/* Hover */
+
+.tech-item::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--accent);
+
+  transition: width 0.35s ease;
 }
 
-/* ================================
-   SKILLS RESPONSIVE
-================================ */
-
-@media (max-width: 950px) {
-  .skills-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .skill-category:last-child {
-    grid-column: 1 / -1;
-  }
+.tech-item:hover {
+  background: rgba(255, 255, 255, 0.025);
 }
 
-@media (max-width: 650px) {
-  .skills-grid {
+.tech-item:hover::before {
+  width: 100%;
+}
+
+.tech-item:hover .tech-icon {
+  transform: translateY(-4px) scale(1.08);
+  color: var(--accent);
+  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.35));
+}
+
+/* VS Code custom icon */
+
+.vscode-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1px;
+
+  color: #4daafc;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+
+  border: 2px solid currentColor;
+  border-radius: 6px;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.tech-item:hover .vscode-icon {
+  transform: scale(1.08);
+  color: var(--accent);
+}
+
+/* Larger Tools section */
+
+.tech-group:last-child .tech-items {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.tech-group:last-child .tech-item {
+  min-height: 105px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+  .skills-tech-grid {
     grid-template-columns: 1fr;
   }
 
-  .skill-category {
+  .tech-group {
     min-height: auto;
-    padding: 25px;
   }
 
-  .skill-category:last-child {
-    grid-column: auto;
+  .tech-items {
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  .skill-category-description {
-    min-height: auto;
+  .tech-item:nth-child(even) {
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .tech-item:nth-child(4n) {
+    border-right: none;
+  }
+
+  .tech-item:nth-last-child(-n + 2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .tech-item:last-child {
+    border-bottom: none;
   }
 }
 
+@media (max-width: 700px) {
+  .skills-tech-grid {
+    border-left: none;
+  }
+
+  .tech-group {
+    padding: 26px 20px;
+  }
+
+  .tech-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tech-item:nth-child(4n) {
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .tech-item:nth-child(even) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-group-header h3 {
+    font-size: 18px;
+  }
+
+  .tech-group-header p {
+    font-size: 12px;
+  }
+
+  .tech-item {
+    min-height: 110px;
+    padding: 18px 12px;
+  }
+
+  .tech-icon {
+    font-size: 28px;
+  }
+
+  .tech-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .tech-info h4 {
+    font-size: 13px;
+  }
+
+  .tech-info span {
+    font-size: 9px;
+  }
+}
 /* ================================
    PROJECTS
 ================================ */
@@ -1435,179 +1597,429 @@
   }
 }
 
-/* ================================
-   JOURNEY
-================================ */
+/* =========================================
+   WHY ME
+========================================= */
 
-.journey {
+.why-me {
   position: relative;
-
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
 }
 
-.journey-list {
-  position: relative;
+/* Background grid */
 
-  max-width: 950px;
-
-  margin: 0 auto;
-}
-
-.journey-list::before {
+.why-me::before {
   content: "";
 
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 75px;
+  inset: 0;
 
-  width: 1px;
+  pointer-events: none;
 
-  background: var(--border-color);
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 60px 60px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 12%,
+    black 88%,
+    transparent
+  );
 }
 
-.journey-item {
+.why-me .container {
   position: relative;
+  z-index: 1;
+}
 
+/* =========================================
+   TOP
+========================================= */
+
+.why-me-top {
   display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 50px;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 80px;
 
-  padding: 0 0 55px;
+  align-items: end;
+
+  margin-bottom: 70px;
 }
 
-.journey-item:last-child {
-  padding-bottom: 0;
-}
-
-.journey-number {
+.why-me-title {
   position: relative;
+}
+
+.why-me-title .section-label {
+  display: block;
+  margin-bottom: 22px;
+}
+
+.why-me-title h2 {
+  margin: 0;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(72px, 9vw, 138px);
+  line-height: 0.78;
+
+  font-weight: 600;
+  letter-spacing: -0.07em;
+
+  color: var(--text-primary);
+
+  text-transform: lowercase;
+}
+
+.why-me-title h2 span {
+  display: block;
+
+  color: transparent;
+
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+}
+
+.why-me-intro {
+  display: flex;
+  gap: 20px;
+
+  max-width: 500px;
+
+  margin-left: auto;
+
+  padding-bottom: 8px;
+}
+
+.why-me-line {
+  flex-shrink: 0;
+
+  width: 2px;
+  height: 300px;
+
+  background: var(--accent);
+}
+
+.why-me-intro p {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 25px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.why-me-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 14px;
+}
+
+.why-card {
+  position: relative;
+
+  min-height: 380px;
 
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 
-  padding-top: 4px;
+  padding: 28px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
-.journey-number span {
-  position: relative;
-  z-index: 2;
+.why-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: -80px;
+  bottom: -80px;
+
+  border-radius: 50%;
+
+  background: rgba(59, 130, 246, 0.12);
+
+  filter: blur(40px);
+
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(59, 130, 246, 0.4);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(59, 130, 246, 0.08),
+      rgba(255, 255, 255, 0.02)
+    );
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.why-card:hover::before {
+  opacity: 1;
+}
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.why-card-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: auto;
+}
+
+.why-card-number {
+  color: var(--accent);
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+}
+
+.why-card-icon {
+  width: 48px;
+  height: 48px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 48px;
-  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  border-radius: 50%;
+  color: var(--text-secondary);
 
-  background: var(--bg-primary);
+  font-size: 21px;
 
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.why-card:hover .why-card-icon {
   color: var(--accent);
 
-  font-family: "Space Grotesk", sans-serif;
+  border-color: rgba(59, 130, 246, 0.35);
 
-  font-size: 0.75rem;
+  transform: rotate(8deg);
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.why-card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.why-card-tag {
+  display: inline-block;
+
+  margin-bottom: 14px;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
   font-weight: 600;
+
+  letter-spacing: 0.12em;
 }
 
-.journey-content {
-  padding: 2px 0 5px;
-}
+.why-card h3 {
+  margin: 0 0 14px;
 
-.journey-content h3 {
   color: var(--text-primary);
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 1.35rem;
-  font-weight: 600;
-  line-height: 1.3;
+  font-size: 22px;
+  line-height: 1.15;
+
+  letter-spacing: -0.02em;
 }
 
-.journey-content p {
-  max-width: 700px;
-
-  margin-top: 12px;
-
-  color: var(--text-secondary);
-
-  font-size: 0.9rem;
-  line-height: 1.8;
-}
-
-.journey-technologies {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-
-  margin-top: 20px;
-}
-
-.journey-technologies span {
-  padding: 6px 10px;
-
-  border: 1px solid var(--border-color);
-  border-radius: 5px;
+.why-card p {
+  margin: 0;
 
   color: var(--text-muted);
 
-  font-size: 0.68rem;
-  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.8;
 }
 
-/* ================================
-   JOURNEY HOVER
-================================ */
+/* =========================================
+   ARROW
+========================================= */
 
-.journey-item:hover .journey-number span {
-  border-color: var(--accent);
+.why-card-arrow {
+  position: absolute;
 
-  background: rgba(59, 130, 246, 0.08);
+  right: 26px;
+  bottom: 24px;
 
-  box-shadow: 0 0 25px rgba(59, 130, 246, 0.12);
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text-muted);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  font-size: 15px;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
-.journey-item:hover .journey-content h3 {
-  color: #fff;
+.why-card:hover .why-card-arrow {
+  color: white;
+
+  background: var(--accent);
+
+  transform: translate(3px, -3px);
 }
 
-/* ================================
-   JOURNEY RESPONSIVE
-================================ */
+/* =========================================
+   BOTTOM PROCESS LINE
+========================================= */
 
-@media (max-width: 700px) {
-  .journey-list::before {
-    left: 23px;
+.why-me-bottom {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding-top: 24px;
+
+  color: var(--text-muted);
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  border-bottom: 1px solid var(--border-color);
+
+  padding-bottom: 24px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+  .why-me-top {
+    grid-template-columns: 1fr;
+    gap: 35px;
   }
 
-  .journey-item {
-    grid-template-columns: 48px 1fr;
-    gap: 20px;
-
-    padding-bottom: 45px;
+  .why-me-intro {
+    margin-left: 0;
   }
 
-  .journey-number {
-    justify-content: flex-start;
+  .why-me-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .journey-number span {
-    width: 48px;
-    height: 48px;
-  }
-
-  .journey-content h3 {
-    font-size: 1.15rem;
-  }
-
-  .journey-content p {
-    font-size: 0.85rem;
+  .why-card {
+    min-height: 340px;
   }
 }
 
+@media (max-width: 650px) {
+  .why-me-title h2 {
+    font-size: clamp(60px, 18vw, 100px);
+  }
+
+  .why-me-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-card {
+    min-height: 320px;
+  }
+
+  .why-me-bottom {
+    gap: 15px;
+
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 450px) {
+  .why-me-intro p {
+    font-size: 13px;
+  }
+
+  .why-card {
+    padding: 22px;
+  }
+
+  .why-card h3 {
+    font-size: 20px;
+  }
+
+  .why-me-bottom {
+    font-size: 8px;
+  }
+}
 /* ================================
    GITHUB
 ================================ */

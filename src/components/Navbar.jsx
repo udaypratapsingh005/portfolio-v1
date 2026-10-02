@@ -19,7 +19,7 @@ function Navbar() {
     <header className="navbar">
       <div className="container navbar-container">
         <a href="#home" className="navbar-logo">
-          UDAY PRATAP SINGH<span>.</span>DEV
+          UDAY PRATAP <span>SINGH</span>
         </a>
 
         <nav className={`navbar-nav ${menuOpen ? "active" : ""}`}>
@@ -35,7 +35,7 @@ function Navbar() {
           ))}
 
           <a
-            href="/resume/resume.pdf"
+            href="./public/uday_pratap_singh_resume.pdf"
             className="navbar-resume"
             target="_blank"
             rel="noreferrer"

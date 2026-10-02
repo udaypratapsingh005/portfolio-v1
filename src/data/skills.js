@@ -2,57 +2,89 @@ const skills = {
   frontend: [
     {
       name: "HTML5",
-      level: "Core",
+      category: "Frontend",
+      description: "Web Structure",
     },
     {
       name: "CSS3",
-      level: "Core",
+      category: "Frontend",
+      description: "Styling & Layout",
     },
     {
       name: "JavaScript",
-      level: "Core",
+      category: "Frontend",
+      description: "Programming Logic",
     },
     {
       name: "React",
-      level: "Learning",
+      category: "Frontend",
+      description: "UI Development",
     },
   ],
 
   backend: [
     {
       name: "Node.js",
-      level: "Learning",
+      category: "Backend",
+      description: "Server Runtime",
     },
     {
       name: "Express.js",
-      level: "Learning",
+      category: "Backend",
+      description: "Backend Framework",
     },
     {
       name: "MongoDB",
-      level: "Learning",
+      category: "Backend",
+      description: "NoSQL Database",
     },
     {
       name: "REST API",
-      level: "Learning",
+      category: "Backend",
+      description: "API Architecture",
     },
   ],
 
   tools: [
     {
       name: "Git",
-      level: "Core",
+      category: "Tools",
+      description: "Version Control",
     },
     {
       name: "GitHub",
-      level: "Core",
+      category: "Tools",
+      description: "Code Hosting",
     },
     {
       name: "VS Code",
-      level: "Core",
+      category: "Tools",
+      description: "Code Editor",
+    },
+    {
+      name: "Postman",
+      category: "Tools",
+      description: "API Testing",
     },
     {
       name: "Vercel",
-      level: "Working",
+      category: "Tools",
+      description: "Frontend Deployment",
+    },
+    {
+      name: "Render",
+      category: "Tools",
+      description: "Backend Deployment",
+    },
+    {
+      name: "MongoDB Atlas",
+      category: "Tools",
+      description: "Cloud Database",
+    },
+    {
+      name: "npm",
+      category: "Tools",
+      description: "Package Manager",
     },
   ],
 };

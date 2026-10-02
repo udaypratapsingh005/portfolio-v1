@@ -1,26 +1,73 @@
+import {
+  SiHtml5,
+  SiJavascript,
+  SiReact,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiGit,
+  SiGithub,
+  SiPostman,
+  SiVercel,
+  SiRender,
+  SiNpm,
+} from "react-icons/si";
+
+import { FaCss3Alt } from "react-icons/fa";
+
 import skills from "../data/skills";
 
-const skillCategories = [
+const iconMap = {
+  HTML5: SiHtml5,
+  CSS3: FaCss3Alt,
+  JavaScript: SiJavascript,
+  React: SiReact,
+
+  "Node.js": SiNodedotjs,
+  "Express.js": SiExpress,
+  MongoDB: SiMongodb,
+
+  "REST API": SiJavascript,
+
+  Git: SiGit,
+  GitHub: SiGithub,
+
+  "VS Code": () => (
+    <span className="vscode-icon">
+      <span>&lt;</span>
+      <span>/</span>
+      <span>&gt;</span>
+    </span>
+  ),
+
+  Postman: SiPostman,
+  Vercel: SiVercel,
+  Render: SiRender,
+  "MongoDB Atlas": SiMongodb,
+  npm: SiNpm,
+};
+
+const skillGroups = [
   {
-    key: "frontend",
     number: "01",
     title: "Frontend",
     description:
-      "Building responsive and interactive user interfaces with modern web technologies.",
+      "Building responsive and interactive user interfaces.",
+    items: skills.frontend,
   },
   {
-    key: "backend",
     number: "02",
     title: "Backend",
     description:
-      "Working with server-side JavaScript, APIs, databases, and backend architecture.",
+      "Working with server-side JavaScript, APIs, and databases.",
+    items: skills.backend,
   },
   {
-    key: "tools",
     number: "03",
-    title: "Tools & Workflow",
+    title: "Tools & Technologies",
     description:
-      "Using development tools and platforms to build, manage, and deploy applications.",
+      "Tools and platforms used to build, test, manage, and deploy applications.",
+    items: skills.tools,
   },
 ];
 
@@ -28,55 +75,61 @@ function Skills() {
   return (
     <section id="skills" className="skills section">
       <div className="container">
+
         <div className="section-heading">
           <span className="section-label">Tech Stack</span>
 
           <h2 className="section-title">
-            Technologies I
-            <br />
-            work with.
+            Tools & <span>Technologies.</span>
           </h2>
 
           <p className="section-description">
-            A practical stack focused on building modern web applications.
-            Technologies marked as learning are part of my current development
-            journey.
+            Technologies and tools I use to build, test, manage, and
+            deploy web applications.
           </p>
         </div>
 
-        <div className="skills-grid">
-          {skillCategories.map((category) => (
-            <article className="skill-category" key={category.key}>
-              <div className="skill-category-header">
-                <span className="skill-category-number">
-                  {category.number}
+        <div className="skills-tech-grid">
+          {skillGroups.map((group) => (
+            <div className="tech-group" key={group.title}>
+
+              <div className="tech-group-header">
+                <span className="tech-group-number">
+                  {group.number}
                 </span>
 
-                <h3>{category.title}</h3>
+                <div>
+                  <h3>{group.title}</h3>
+
+                  <p>{group.description}</p>
+                </div>
               </div>
 
-              <p className="skill-category-description">
-                {category.description}
-              </p>
+              <div className="tech-items">
+                {group.items.map((skill) => {
+                  const Icon = iconMap[skill.name];
 
-              <div className="skill-list">
-                {skills[category.key].map((skill) => (
-                  <div className="skill-item" key={skill.name}>
-                    <span className="skill-name">{skill.name}</span>
+                  return (
+                    <div className="tech-item" key={skill.name}>
 
-                    <span
-                      className={`skill-level skill-level-${skill.level
-                        .toLowerCase()
-                        .replace(/\s+/g, "-")}`}
-                    >
-                      {skill.level}
-                    </span>
-                  </div>
-                ))}
+                      <div className="tech-icon">
+                        <Icon />
+                      </div>
+
+                      <div className="tech-info">
+                        <h4>{skill.name}</h4>
+                        <span>{skill.description}</span>
+                      </div>
+
+                    </div>
+                  );
+                })}
               </div>
-            </article>
+
+            </div>
           ))}
         </div>
+
       </div>
     </section>
   );

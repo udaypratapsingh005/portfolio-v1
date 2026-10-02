@@ -1,82 +1,119 @@
-const journeyItems = [
+import {
+  FiArrowUpRight,
+  FiCode,
+  FiLayers,
+  FiRefreshCw,
+  FiZap,
+} from "react-icons/fi";
+
+const reasons = [
   {
-    year: "01",
-    title: "Web Development Fundamentals",
+    number: "01",
+    icon: FiCode,
+    title: "I Build, Not Just Learn",
     description:
-      "Started with HTML, CSS, responsive layouts, Flexbox, Grid, and the fundamentals required to build modern web interfaces.",
-    technologies: ["HTML", "CSS", "Responsive Design"],
+      "I turn concepts into working projects so that I can understand how technologies behave in real applications.",
+    tag: "PROJECT DRIVEN",
+    size: "large",
   },
   {
-    year: "02",
-    title: "JavaScript Development",
+    number: "02",
+    icon: FiLayers,
+    title: "Full Stack Mindset",
     description:
-      "Moved into JavaScript and worked with functions, arrays, objects, DOM manipulation, events, asynchronous concepts, and modern ES6+ features.",
-    technologies: ["JavaScript", "DOM", "ES6+"],
+      "I am building my understanding across frontend, backend, APIs, databases, and deployment.",
+    tag: "MERN",
+    size: "small",
   },
   {
-    year: "03",
-    title: "React Development",
+    number: "03",
+    icon: FiZap,
+    title: "Problem Solving",
     description:
-      "Started building component-based applications with React and learned concepts such as state, effects, refs, props, routing, and application structure.",
-    technologies: ["React", "JSX", "Hooks"],
+      "I focus on understanding problems, breaking them into smaller parts, and finding practical solutions.",
+    tag: "BUILD • DEBUG • IMPROVE",
+    size: "small",
   },
   {
-    year: "04",
-    title: "Backend Development",
+    number: "04",
+    icon: FiRefreshCw,
+    title: "Always Improving",
     description:
-      "Expanded into backend development with Node.js and Express, including REST APIs, CRUD operations, authentication, and database integration.",
-    technologies: ["Node.js", "Express.js", "REST API"],
-  },
-  {
-    year: "05",
-    title: "Full Stack Projects",
-    description:
-      "Started combining frontend and backend concepts to build practical applications and understand how complete web applications work together.",
-    technologies: ["MongoDB", "Mongoose", "MERN"],
+      "Every project gives me something new to learn, improve, refactor, and apply in the next one.",
+    tag: "CONTINUOUS LEARNING",
+    size: "large",
   },
 ];
 
 function Journey() {
   return (
-    <section id="journey" className="journey section">
+    <section id="why-me" className="why-me section">
       <div className="container">
-        <div className="section-heading">
-          <span className="section-label">My Journey</span>
 
-          <h2 className="section-title">
-            Learning by
-            <br />
-            building.
-          </h2>
+        <div className="why-me-top">
+          <div className="why-me-title">
+            <span className="section-label">Why Me?</span>
 
-          <p className="section-description">
-            My development journey has been focused on learning fundamentals,
-            applying them through projects, and gradually moving toward full
-            stack development.
-          </p>
+            <h2>
+              why
+              consider me?
+            </h2>
+          </div>
+
+          <div className="why-me-intro">
+            <span className="why-me-line"></span>
+
+            <p>
+              I am focused on building practical skills through real projects,
+              consistent practice, and continuous improvement.
+            </p>
+          </div>
         </div>
 
-        <div className="journey-list">
-          {journeyItems.map((item) => (
-            <article className="journey-item" key={item.year}>
-              <div className="journey-number">
-                <span>{item.year}</span>
-              </div>
+        <div className="why-me-grid">
+          {reasons.map((reason) => {
+            const Icon = reason.icon;
 
-              <div className="journey-content">
-                <h3>{item.title}</h3>
+            return (
+              <article
+                className={`why-card why-card-${reason.size}`}
+                key={reason.number}
+              >
+                <div className="why-card-top">
+                  <span className="why-card-number">
+                    {reason.number}
+                  </span>
 
-                <p>{item.description}</p>
-
-                <div className="journey-technologies">
-                  {item.technologies.map((technology) => (
-                    <span key={technology}>{technology}</span>
-                  ))}
+                  <span className="why-card-icon">
+                    <Icon />
+                  </span>
                 </div>
-              </div>
-            </article>
-          ))}
+
+                <div className="why-card-content">
+                  <span className="why-card-tag">
+                    {reason.tag}
+                  </span>
+
+                  <h3>{reason.title}</h3>
+
+                  <p>{reason.description}</p>
+                </div>
+
+                <span className="why-card-arrow">
+                  <FiArrowUpRight />
+                </span>
+              </article>
+            );
+          })}
         </div>
+
+        <div className="why-me-bottom">
+          <span>01 — BUILD</span>
+          <span>02 — LEARN</span>
+          <span>03 — DEBUG</span>
+          <span>04 — IMPROVE</span>
+        </div>
+
       </div>
     </section>
   );
