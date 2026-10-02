@@ -1,0 +1,62 @@
+portfolio/
+│
+├── public/
+│   ├── images/
+│   │   ├── profile/
+│   │   └── projects/
+│   │
+│   └── resume/
+│       └── resume.pdf
+│
+├── src/
+│   │
+│   ├── assets/
+│   │   └── icons/
+│   │
+│   ├── components/
+│   │   ├── Navbar/
+│   │   │   └── Navbar.jsx
+│   │   │
+│   │   ├── Hero/
+│   │   │   └── Hero.jsx
+│   │   │
+│   │   ├── About/
+│   │   │   └── About.jsx
+│   │   │
+│   │   ├── Skills/
+│   │   │   └── Skills.jsx
+│   │   │
+│   │   ├── Projects/
+│   │   │   ├── Projects.jsx
+│   │   │   └── ProjectCard.jsx
+│   │   │
+│   │   ├── Journey/
+│   │   │   └── Journey.jsx
+│   │   │
+│   │   ├── Github/
+│   │   │   └── Github.jsx
+│   │   │
+│   │   ├── Contact/
+│   │   │   └── Contact.jsx
+│   │   │
+│   │   └── Footer/
+│   │       └── Footer.jsx
+│   │
+│   ├── data/
+│   │   ├── projects.js
+│   │   ├── skills.js
+│   │   └── socialLinks.js
+│   │
+│   ├── styles/
+│   │   ├── components.css
+│   │   ├── sections.css
+│   │   └── responsive.css
+│   │
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
+│
+├── package.json
+├── vite.config.js
+└── eslint.config.js
