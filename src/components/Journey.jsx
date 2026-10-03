@@ -79,7 +79,7 @@ function Journey() {
                 </span>
 
                 <h3>
-                  Uday Pratap Singh
+                  UDAY PRATAP SINGH
                 </h3>
 
                 <span className="developer-role">
@@ -94,6 +94,7 @@ function Journey() {
 
                 <span>REACT</span>
                 <span>NODE.JS</span>
+                <span>EXPRESS.JS</span>
                 <span>MONGODB</span>
 
               </div>

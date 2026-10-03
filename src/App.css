@@ -2606,11 +2606,11 @@
 }
 
 .developer-card-type {
-  color: #52525b;
+  color: #575768;
 
   font-family: "Courier New", monospace;
 
-  font-size: 8px;
+  font-size: 15px;
 
   letter-spacing: 0.15em;
 
@@ -2814,7 +2814,7 @@
 
   z-index: 3;
 
-  margin-top: 22px;
+  margin-top: 16px;
 
   padding-top: 18px;
 
@@ -2827,11 +2827,11 @@
 
   margin-bottom: 8px;
 
-  color: #4f4f59;
+  color: #676779;
 
   font-family: "Courier New", monospace;
 
-  font-size: 7px;
+  font-size: 12px;
 
   line-height: 1;
 
@@ -2857,13 +2857,13 @@
 .developer-role {
   display: block;
 
-  margin-top: 8px;
+  margin-top: 6px;
 
   color: #8b72ff;
 
   font-family: "Courier New", monospace;
 
-  font-size: 8px;
+  font-size: 15px;
 
   line-height: 1;
 
@@ -2888,7 +2888,7 @@
 
   margin-top: 18px;
 
-  padding-top: 13px;
+  padding-top: 6px;
 
   border-top:
     1px dashed rgba(255, 255, 255, 0.07);
@@ -3053,16 +3053,16 @@
 }
 
 .developer-tech span {
-  padding: 6px 9px;
+  padding: 7px 10px;
 
   border:
     1px solid rgba(255, 255, 255, 0.08);
 
-  color: #71717a;
+  color: #7b7b85;
 
   font-family: "Courier New", monospace;
 
-  font-size: 7px;
+  font-size: 11px;
 
   letter-spacing: 0.08em;
 
@@ -3099,7 +3099,7 @@
 
   justify-content: space-between;
 
-  padding-top: 14px;
+  padding-top: 6px;
 
   border-top:
     1px solid rgba(255, 255, 255, 0.08);
@@ -3116,7 +3116,7 @@
 
   font-family: "Courier New", monospace;
 
-  font-size: 8px;
+  font-size: 10px;
 
   letter-spacing: 0.12em;
 }
