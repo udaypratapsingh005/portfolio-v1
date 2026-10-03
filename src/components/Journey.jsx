@@ -63,7 +63,7 @@ function Journey() {
 
                 <div className="developer-photo">
                   <img
-                    src="./public/images/profile-photo.jpeg"
+                    src="/images/profile-photo.jpeg"
                     alt="Uday Pratap Singh"
                   />
                 </div>
