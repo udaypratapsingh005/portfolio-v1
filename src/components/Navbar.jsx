@@ -36,7 +36,7 @@ function Navbar() {
 
           <a
             href="/uday_pratap_singh_resume.pdf"
-            download="Uday_Pratap_Singh_Resume.pdf"
+            download="Resume.pdf"
             className="navbar-resume"
             target="_blank"
             rel="noreferrer"
