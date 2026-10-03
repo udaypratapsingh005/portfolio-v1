@@ -1,16 +1,75 @@
-# React + Vite
+⚡ Uday Pratap Singh — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
 
-Currently, two official plugins are available:
+### Full Stack Developer • React • MERN
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+A modern, dark-themed developer portfolio built with React to showcase my skills, projects, and development journey.
 
-## React Compiler
+[![Live Portfolio](https://img.shields.io/badge/🌐%20Live%20Portfolio-7C3AED?style=for-the-badge)](https://prince-portfolio-v1.vercel.app/)
+[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=000)](https://react.dev/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Vercel](https://img.shields.io/badge/Vercel-000?style=for-the-badge&logo=vercel&logoColor=fff)](https://vercel.com/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+</div>
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 👨‍💻 About
+
+This portfolio is my personal developer space where I showcase what I **build, learn, and improve** as a Full Stack Developer.
+
+The design combines a **dark UI, purple accents, developer-style visuals, responsive layouts, and subtle interactions** to create a clean modern experience.
+
+---
+
+## ✨ Features
+
+- 🎨 Modern dark developer UI
+- ⚛️ React-based architecture
+- 📱 Fully responsive design
+- 💻 Code-editor inspired hero section
+- 🧩 Skills & technology showcase
+- 🚀 Project showcase with live links
+- 📄 Resume section
+- 🔗 GitHub integration
+- 📬 Contact section
+- ✨ Smooth UI interactions
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend:** React, JavaScript, HTML5, CSS3  
+**Tools:** Vite, Git, GitHub  
+**Deployment:** Vercel
+
+---
+
+## 🚀 Featured Projects
+
+- 📸 **Passport Size Photo Maker** — Create passport-size photo sheets directly in the browser.
+- 🍔 **Khao Ji Khao** — Food-ordering web application.
+- ✅ **TaskFlow** — Task management / Todo application.
+
+---
+
+🌐 Live
+
+Visit My Portfolio →
+
+<div align="center">
+
+
+### Full Stack Developer
+
+Focused on building practical, responsive web applications with React
+and the MERN stack.
+
+
+
+Built with ⚛️ React & 💜 JavaScript
+
+⭐ If you like the project, consider giving the repository a star.
+<div/>
+:::
