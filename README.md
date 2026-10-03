@@ -15,6 +15,9 @@ A modern, dark-themed developer portfolio built with React to showcase my skills
 
 ---
 
+<img width="1362" height="624" alt="image" src="https://github.com/user-attachments/assets/9f9e9bd2-a6bb-46b7-9a27-9035ab86a9b4" />
+
+
 ## 👨‍💻 About
 
 This portfolio is my personal developer space where I showcase what I **build, learn, and improve** as a Full Stack Developer.
