@@ -1,117 +1,131 @@
-import {
-  FiArrowUpRight,
-  FiCode,
-  FiLayers,
-  FiRefreshCw,
-  FiZap,
-} from "react-icons/fi";
-
-const reasons = [
-  {
-    number: "01",
-    icon: FiCode,
-    title: "I Build, Not Just Learn",
-    description:
-      "I turn concepts into working projects so that I can understand how technologies behave in real applications.",
-    tag: "PROJECT DRIVEN",
-    size: "large",
-  },
-  {
-    number: "02",
-    icon: FiLayers,
-    title: "Full Stack Mindset",
-    description:
-      "I am building my understanding across frontend, backend, APIs, databases, and deployment.",
-    tag: "MERN",
-    size: "small",
-  },
-  {
-    number: "03",
-    icon: FiZap,
-    title: "Problem Solving",
-    description:
-      "I focus on understanding problems, breaking them into smaller parts, and finding practical solutions.",
-    tag: "BUILD • DEBUG • IMPROVE",
-    size: "small",
-  },
-  {
-    number: "04",
-    icon: FiRefreshCw,
-    title: "Always Improving",
-    description:
-      "Every project gives me something new to learn, improve, refactor, and apply in the next one.",
-    tag: "CONTINUOUS LEARNING",
-    size: "large",
-  },
-];
+import { FiCode, FiGithub, FiGlobe } from "react-icons/fi";
 
 function Journey() {
   return (
     <section id="why-me" className="why-me section">
       <div className="container">
 
-        <div className="why-me-top">
-          <div className="why-me-title">
-            <span className="section-label">Why Me?</span>
+        <div className="why-me-wrapper">
+
+          {/* =========================
+              LEFT — WHY ME
+          ========================= */}
+
+          <div className="why-me-heading">
+
+            <span className="section-label">
+              WHY ME?
+            </span>
 
             <h2>
               why
-              consider me?
+              <br />
+              consider
+              <br />
+              me?
             </h2>
           </div>
 
-          <div className="why-me-intro">
-            <span className="why-me-line"></span>
 
-            <p>
-              I am focused on building practical skills through real projects,
-              consistent practice, and continuous improvement.
-            </p>
-          </div>
-        </div>
+          {/* =========================
+              RIGHT — ID CARD
+          ========================= */}
 
-        <div className="why-me-grid">
-          {reasons.map((reason) => {
-            const Icon = reason.icon;
+          <div className="developer-card-wrapper">
 
-            return (
-              <article
-                className={`why-card why-card-${reason.size}`}
-                key={reason.number}
-              >
-                <div className="why-card-top">
-                  <span className="why-card-number">
-                    {reason.number}
-                  </span>
+            <div className="developer-card">
 
-                  <span className="why-card-icon">
-                    <Icon />
-                  </span>
-                </div>
+              {/* Card grid */}
+              <div className="developer-card-grid"></div>
 
-                <div className="why-card-content">
-                  <span className="why-card-tag">
-                    {reason.tag}
-                  </span>
+              {/* Top */}
+              <div className="developer-card-top">
 
-                  <h3>{reason.title}</h3>
-
-                  <p>{reason.description}</p>
-                </div>
-
-                <span className="why-card-arrow">
-                  <FiArrowUpRight />
+                <span className="developer-card-number">
+                  01
                 </span>
-              </article>
-            );
-          })}
-        </div>
 
-        <div className="why-me-bottom">
-          <span>01 — BUILD</span>
-          <span>02 — LEARN</span>
-          <span>03 — DEBUG</span>
-          <span>04 — IMPROVE</span>
+                <span className="developer-card-type">
+                  DEVELOPER ID
+                </span>
+
+                <span className="developer-card-icon">
+                  <FiCode />
+                </span>
+
+              </div>
+
+
+              {/* Photo */}
+              <div className="developer-photo-wrapper">
+
+                <div className="developer-photo-glow"></div>
+
+                <div className="developer-photo">
+                  <img
+                    src="./public/images/profile-photo.jpeg"
+                    alt="Uday Pratap Singh"
+                  />
+                </div>
+
+              </div>
+
+
+              {/* Information */}
+              <div className="developer-info">
+
+                <span className="developer-label">
+                  NAME
+                </span>
+
+                <h3>
+                  Uday Pratap Singh
+                </h3>
+
+                <span className="developer-role">
+                  FULL STACK DEVELOPER
+                </span>
+
+              </div>
+
+
+              {/* Tech */}
+              <div className="developer-tech">
+
+                <span>REACT</span>
+                <span>NODE.JS</span>
+                <span>MONGODB</span>
+
+              </div>
+
+
+              {/* Bottom */}
+              <div className="developer-card-bottom">
+
+                <div className="developer-status">
+                  <span></span>
+                  AVAILABLE
+                </div>
+
+                <div className="developer-links">
+
+                  <FiGithub />
+                  <FiGlobe />
+
+                </div>
+
+              </div>
+
+
+              {/* Decorative code */}
+              <div className="developer-code">
+                {"<"} / DEVELOPER {">"}
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
       </div>
