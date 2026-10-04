@@ -19,7 +19,7 @@ function Footer() {
       <div className="container">
         <div className="footer-top">
           <a href="#home" className="footer-logo">
-            UDAY PRATAP SINGH<span>.</span>DEV
+            UDAY PRATAP <span>SINGH</span>
           </a>
 
           <p className="footer-tagline">

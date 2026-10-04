@@ -77,9 +77,9 @@ function Preloader({ onComplete }) {
 
         {/* BRAND */}
         <div className="preloader-brand">
-          <span>UDAY</span>
+          <span>UDAY PRATAP</span>
           <b>.</b>
-          <span>DEV</span>
+          <span>SINGH</span>
         </div>
 
         {/* STATUS */}

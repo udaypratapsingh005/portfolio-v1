@@ -10,6 +10,7 @@ const projects = [
     liveUrl: "https://passport-size-photo-maker-xi.vercel.app/",
     githubUrl: "https://github.com/udaypratapsingh005/Passport-Size-Photo-Maker",
     featured: true,
+    status: "Complete",
   },
 
   {
@@ -23,6 +24,7 @@ const projects = [
     liveUrl: "https://taskflow-todo-list-gold.vercel.app/",
     githubUrl: "https://github.com/udaypratapsingh005/TaskFlow_Todo_List",
     featured: true,
+    status: "Complete",
   },
 
   {
@@ -36,6 +38,7 @@ const projects = [
     liveUrl: "https://food-delivery-pi-seven.vercel.app/#",
     githubUrl: "https://github.com/udaypratapsingh005/Food-Delivery",
     featured: true,
+    status: "In Progress",
   },
 ];
 

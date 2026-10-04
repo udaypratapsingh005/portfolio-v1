@@ -1,3 +1,5 @@
+import { FiArrowUpRight, FiGithub } from "react-icons/fi";
+
 function ProjectCard({ project }) {
   return (
     <article className={`project-card ${project.featured ? "featured" : ""}`}>
@@ -8,6 +10,28 @@ function ProjectCard({ project }) {
           className="project-image"
           loading="lazy"
         />
+        
+        {project.status === "Complete" && (
+          <span className="project-status-badge project-complete-badge">
+            <span className="status-dot"></span>
+            COMPLETED
+          </span>
+          )}
+
+          {project.status === "Complete" && (
+          <span className="project-status-badge project-complete-badge">
+            <span className="status-dot"></span>
+            COMPLETED
+          </span>
+          )}
+
+        {/* IN PROGRESS BADGE */}
+        {project.status === "In Progress" && (
+          <span className="project-status-badge">
+            <span className="status-dot"></span>
+            IN PROGRESS
+          </span>
+        )}
 
         <div className="project-image-overlay">
           <a
