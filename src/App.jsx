@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -7,45 +9,55 @@ import Journey from "./components/Journey";
 import WhyMe from "./components/WhyMe";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Preloader from "./components/Preloader";
 import ScrollReveal from "./components/ScrollReveal";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <div className="app">
-      <Navbar />
+    <>
+      {/* PORTFOLIO PRELOADER */}
+      {isLoading && (
+        <Preloader onComplete={() => setIsLoading(false)} />
+      )}
 
-      <main>
-        <Hero />
+      <div className={`app ${isLoading ? "app-hidden" : "app-visible"}`}>
+        <Navbar />
 
-        <ScrollReveal variant="up">
-          <About />
-        </ScrollReveal>
+        <main>
+          <Hero />
 
-        <ScrollReveal variant="scale">
-          <Skills />
-        </ScrollReveal>
+          <ScrollReveal variant="up">
+            <About />
+          </ScrollReveal>
 
-        <ScrollReveal variant="up">
-          <Projects />
-        </ScrollReveal>
+          <ScrollReveal variant="scale">
+            <Skills />
+          </ScrollReveal>
 
-        {/* EXISTING 4 CARDS - UNCHANGED */}
-        <ScrollReveal variant="up">
-          <Journey />
-        </ScrollReveal>
+          <ScrollReveal variant="up">
+            <Projects />
+          </ScrollReveal>
 
-        {/* WHY ME */}
-        <ScrollReveal variant="left">
-          <WhyMe />
-        </ScrollReveal>
+          {/* EXISTING 4 CARDS - UNCHANGED */}
+          <ScrollReveal variant="up">
+            <Journey />
+          </ScrollReveal>
 
-        <ScrollReveal variant="up">
-          <Contact />
-        </ScrollReveal>
-      </main>
+          {/* WHY ME */}
+          <ScrollReveal variant="left">
+            <WhyMe />
+          </ScrollReveal>
 
-      <Footer />
-    </div>
+          <ScrollReveal variant="up">
+            <Contact />
+          </ScrollReveal>
+        </main>
+
+        <Footer />
+      </div>
+    </>
   );
 }
 
